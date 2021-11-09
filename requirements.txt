@@ -2,7 +2,7 @@ pandas
 seaborn
 plotly
 sklearn
-re
+re 21.3.1
 pickle
 numpy
 tabulate
