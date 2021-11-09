@@ -1,6 +1,9 @@
+pip install pip-upgrader
 pandas
 seaborn
 plotly
 sklearn
 numpy
 tabulate
+re
+pickle
