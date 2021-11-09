@@ -47,11 +47,11 @@ plt.xlim(0,200000)
 fig = sns.displot(x=df.Km,data=df, hue=1,aspect=2.4)
 st.pyplot(fig)
 
-st.markdown('Price variation of based on location')
-plt.show()
-fig1 = sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
-plt.ylim(0,60) 
-st.pyplot(fig1)
+# st.markdown('Price variation of based on location')
+# plt.show()
+# fig1 = sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
+# plt.ylim(0,60) 
+# st.pyplot(fig1)
 
 
 location_list=df.Location.unique().tolist()
