@@ -5,4 +5,4 @@ sklearn
 numpy
 tabulate
 re
-
+>>pip install 're==21.3.1'
