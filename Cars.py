@@ -41,16 +41,16 @@ st.sidebar.title('Input Feature')
 #st.bar_chart(data=pd.pivot_table(df,index=['Location'],columns=None,aggfunc={'Price':'sum'}), width=500, height=500, use_container_width=False)
 #st.bar_chart(data=pd.pivot_table(df,index=['Location'],columns=None,aggfunc={'Price':'sum'}), width=500, height=500, use_container_width=True)
 
-st.markdown('Distribution of occurence of sale based on distance run')
-plt.show()
-plt.xlim(0,200000) 
-fig = sns.displot(x=df.Km,data=df, hue=1,aspect=2.4)
-st.pyplot(fig)
-
-# st.markdown('Price variation of based on location')
-# fig1 = sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
-# plt.ylim(0,60) 
+# st.markdown('Distribution of occurence of sale based on distance run')
+# plt.show()
+# plt.xlim(0,200000) 
+# fig = sns.displot(x=df.Km,data=df, hue=1,aspect=2.4)
 # st.pyplot(fig)
+
+st.markdown('Price variation of based on location')
+fig = sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
+plt.ylim(0,60) 
+st.pyplot(fig)
 
 #with st.container():
 #    st.write("This is inside the container")
