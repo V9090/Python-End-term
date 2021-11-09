@@ -50,7 +50,7 @@ st.pyplot(fig)
 st.markdown('Price variation of based on location')
 fig1 = sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
 plt.ylim(0,60) 
-st.pyplot(fig1)
+st.pyplot(fig)
 
 #with st.container():
 #    st.write("This is inside the container")
