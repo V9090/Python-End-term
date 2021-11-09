@@ -6,4 +6,4 @@ numpy
 tabulate
 re
 pickle
-pip install pip-upgrader
+/home/appuser/venv/bin/python -m pip install --upgrade pip
