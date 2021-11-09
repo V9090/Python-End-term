@@ -5,4 +5,4 @@ sklearn
 numpy
 tabulate
 re
-pip install --upgrade pip
+pip install pip-upgrader
