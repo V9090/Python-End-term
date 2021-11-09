@@ -4,4 +4,4 @@ plotly
 sklearn
 numpy
 tabulate
---upgrade pip
+pip==21.3.1
