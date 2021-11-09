@@ -43,8 +43,8 @@ st.sidebar.title('Input Feature')
 
 st.markdown('Distribution of occurence of sale based on distance run')
 plt.show()
-fig = sns.displot(x=df.Km,data=df, hue=1,aspect=2.4)
 plt.xlim(0,200000) 
+fig = sns.displot(x=df.Km,data=df, hue=1,aspect=2.4)
 st.pyplot(fig)
 
 # st.markdown('Price variation of based on location')
