@@ -26,9 +26,6 @@ df.keys()
 # go to anaconda prompt and use --->>>> cd path to change base folder path
 # streamlit run filename.py in anaconda
 
-st.title('Used-Car Price Calculator')
-st.sidebar.title('Input Feature')
-
 Col_name=df.columns
 df_test=pd.DataFrame(columns=Col_name)
 df_test.drop(columns=['Power.1','Ownership.1','Unnamed: 0'],inplace=True)
@@ -36,6 +33,13 @@ col=df_test.columns
 
 for i in df_test.columns:
     df_test.loc[0,i]=0
+
+  
+st.title('Used-Car Price Calculator')
+st.sidebar.title('Input Feature')
+
+#st.bar_chart(data=pd.pivot_table(df,index=['Location'],columns=None,aggfunc={'Price':'sum'}), width=500, height=500, use_container_width=False)
+#st.bar_chart(data=pd.pivot_table(df,index=['Location'],columns=None,aggfunc={'Price':'sum'}), width=500, height=500, use_container_width=True)
 
 st.markdown('Distribution of occurence of sale based on distance run')
 plt.show()
@@ -47,7 +51,16 @@ st.markdown('Price variation of based on location')
 fig1 = sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
 plt.ylim(0,60) 
 st.pyplot(fig)
-    
+
+#with st.container():
+#    st.write("This is inside the container")
+#left_column, right_column = st.columns(2)
+#with left_column:
+#    chosen = st.radio(
+#        'Sorting hat',
+#        ("Gryffindor", "Ravenclaw", "Hufflepuff", "Slytherin"))
+#    st.write(f"You are in {chosen} house!")
+
 location_list=df.Location.unique().tolist()
 location_list.remove('Pune')
 Fuel_list=df.Fuel.unique().tolist()
@@ -65,16 +78,6 @@ df_test.loc[0,'Power']=st.sidebar.text_input('Power size in bhp',value=112)
 df_test.loc[0,'Age']=st.sidebar.text_input('Age',value=10)
 df_test.loc[0,'Ownership']=st.sidebar.selectbox('Prior number of owners', df.Ownership.unique())
 
-# df_test.loc[0,'Location']=st.selectbox('Location',location_list)
-# df_test.loc[0,'Fuel']=st.selectbox('Fuel', Fuel_list)
-# df_test.loc[0,'Make']=st.selectbox('Make', Make_list)
-# df_test.loc[0,'Km']=st.text_input('distance travelled in km',value=100)
-# df_test.loc[0,'Mileage']=st.text_input('Mileage in km/l',value=20)
-# df_test.loc[0,'Engine']=st.text_input('Engine size in cc',value=1000)
-# df_test.loc[0,'Power']=st.text_input('Power size in bhp',value=112)
-# df_test.loc[0,'Age']=st.text_input('Age',value=10)
-# df_test.loc[0,'Ownership']=st.selectbox('Prior number of owners', df.Ownership.unique())
-
 for i in df_test.columns[10:]:
     df_test.loc[0,i]=0
 df_test.loc[0,'Location_'+str(df_test['Location'][0])]=1
@@ -84,14 +87,16 @@ print(str(df_test.keys()))
 #['Location_Pune','Fuel_CNG','Make_Volvo']
 df_test.drop(columns={'Price','Location','Fuel','Make'},inplace=True)
 df_test[list(df_test)].astype('float')
+
 def call(number):
     return ("{:,}".format(number))
 if mp.predict(df_test)<=0:
     Price=str(50,000)
 else:
     Price=str(call(int(mp.predict(df_test)*100000)))
-st.text("Price o vehicle is "+Price)
 
+
+      
 st.header("Price of vehicle")
 st.metric(label="", value="₹ "+str(Price), delta="")
 
