@@ -26,6 +26,9 @@ df.keys()
 # go to anaconda prompt and use --->>>> cd path to change base folder path
 # streamlit run filename.py in anaconda
 
+st.title('Used-Car Price Calculator')
+st.sidebar.title('Input Feature')
+
 Col_name=df.columns
 df_test=pd.DataFrame(columns=Col_name)
 df_test.drop(columns=['Power.1','Ownership.1','Unnamed: 0'],inplace=True)
@@ -34,7 +37,17 @@ col=df_test.columns
 for i in df_test.columns:
     df_test.loc[0,i]=0
 
+st.markdown('Distribution of occurence of sale based on distance run')
+plt.show()
+fig = sns.displot(x=df.Km,data=df, hue=1,aspect=2.4)
+plt.xlim(0,200000) 
+st.pyplot(fig)
 
+st.markdown('Price variation of based on location')
+fig1 = sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
+plt.ylim(0,60) 
+st.pyplot(fig)
+    
 location_list=df.Location.unique().tolist()
 location_list.remove('Pune')
 Fuel_list=df.Fuel.unique().tolist()
@@ -71,10 +84,14 @@ print(str(df_test.keys()))
 #['Location_Pune','Fuel_CNG','Make_Volvo']
 df_test.drop(columns={'Price','Location','Fuel','Make'},inplace=True)
 df_test[list(df_test)].astype('float')
+def call(number):
+    return ("{:,}".format(number))
 if mp.predict(df_test)<=0:
-    Price=str(50000)
+    Price=str(50,000)
 else:
-    Price=str(int(mp.predict(df_test)*100000))
+    Price=str(call(int(mp.predict(df_test)*100000)))
 st.text("Price o vehicle is "+Price)
 
+st.header("Price of vehicle")
+st.metric(label="", value="₹ "+str(Price), delta="")
 
