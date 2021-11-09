@@ -1,0 +1,8 @@
+pandas
+seaborn
+plotly
+sklearn
+re
+pickle
+numpy
+tabulate
