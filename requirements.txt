@@ -4,5 +4,4 @@ plotly
 sklearn
 numpy
 tabulate
-re
->>pip install 're==21.3.1'
+re==21.3.1
