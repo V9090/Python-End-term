@@ -46,7 +46,6 @@ st.sidebar.title('Input Feature')
 # plt.xlim(0,200000) 
 # fig = sns.displot(x=df.Km,data=df, hue=1,aspect=2.4)
 # st.pyplot(fig)
-
 sd = st.selectbox(
         "Select a Plot", #Drop Down Menu Name
         [
