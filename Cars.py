@@ -35,12 +35,12 @@ for i in df_test.columns:
   
 st.title('Used-Car Price Calculator')
 st.sidebar.title('Input Feature')
-
-Pt=pd.pivot_table(df,index="Make",columns=None,aggfunc={'Price':'mean'})
-Pt['F']=Pt.index
-t=sns.barplot(x=Pt.F,y='Price',data=Pt)
-plt.show()
-st.pyplot()
+st.image(https://unsplash.com/photos/rF_j3F2vrNc?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+# Pt=pd.pivot_table(df,index="Make",columns=None,aggfunc={'Price':'mean'})
+# Pt['F']=Pt.index
+# t=sns.barplot(x=Pt.F,y='Price',data=Pt)
+# plt.show()
+# st.pyplot()
 
 location_list=df.Location.unique().tolist()
 location_list.remove('Pune')
