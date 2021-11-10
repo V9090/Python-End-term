@@ -48,19 +48,19 @@ st.sidebar.title('Input Feature')
 sd = st.selectbox(
         "Select a Plot", #Drop Down Menu Name
         [
-            "Box Plot", #First option in menu
-            "Dist Plot"   #Seconf option in menu
+            "Location-Wise Price ", #First option in menu
+            "Sales distribution according to distance run"   #Seconf option in menu
         ]
     )
 
-if sd == "Dist Plot":
+if sd == "Sales distribution according to distance run":
         #plt.figure(figsize=(12, 6))
         g=sns.displot(data=df,x=df.Km, color= 'purple')
         g.set(xlim=(0,200000))
         plt.show()
         st.pyplot()
     
-elif sd == "Box Plot":
+elif sd == "Location-Wise Price ":
         plt.figure(figsize=(12, 6))
         plt.ylim(0,60)
         sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
