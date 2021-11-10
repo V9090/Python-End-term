@@ -36,9 +36,12 @@ for i in df_test.columns:
 st.title('Used-Car Price Calculator')
 st.sidebar.title('Input Feature')
 
-Pt=pd.pivot_table(df,index="Fuel",columns=None,aggfunc={'Price':'mean'})
+Pt=pd.pivot_table(df,index="Make",columns=None,aggfunc={'Price':'mean'})
 Pt['F']=Pt.index
-sns.barplot(x=Pt.F,y='Price',data=Pt)
+t=sns.boxplot(x=Pt.F,y='Price',data=Pt)
+g.fig.set_figwidth(12)
+g.fig.set_figheight(6)
+plt.show()
 st.pyplot()
 
 location_list=df.Location.unique().tolist()
