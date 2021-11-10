@@ -57,8 +57,8 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 fig = plt.figure(figsize=(12, 6))
 if sd == "Dist Plot":
         plt.xlim(0,200000) 
-        df.plot(x=df.Km, kind='hist')
-       # sns.distplot(df.Km)
+        #df.plot(x=df.Km, kind='hist')
+        sns.distplot(data=df,x=df.Km)
         plt.show()
     
 elif sd == "Box Plot":
