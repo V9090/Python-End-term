@@ -49,14 +49,14 @@ st.sidebar.title('Input Feature')
 sd = st.selectbox(
         "Select a Plot", #Drop Down Menu Name
         [
-            "Dist Plot", #First option in menu
-            "Box Plot"   #Seconf option in menu
+            "Box Plot", #First option in menu
+            "Dist Plot"   #Seconf option in menu
         ]
     )
 fig = plt.figure(figsize=(12, 6))
 if sd == "Dist Plot":
         plt.xlim(0,200000) 
-        sns.displot(x=df.Km,data=df)
+        sns.displot(x='Km',data=df)
         plt.show()
     
 elif sd == "Box Plot":
