@@ -49,7 +49,7 @@ sd = st.selectbox(
         "Select a Plot", #Drop Down Menu Name
         [
             "Location-Wise Price ", #First option in menu
-            "Distribution according to distance run"   #Seconf option in menu
+            "Distribution according to distance run",   #Seconf option in menu
             "Distribution according to vehicle age"
         ]
     )
