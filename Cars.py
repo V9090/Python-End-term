@@ -55,14 +55,13 @@ sd = st.selectbox(
 
 if sd == "Dist Plot":
         plt.figure(figsize=(9, 6))
-        g=sns.displot(data=df,x=df.Km, color= 'red')
+        g=sns.displot(data=df,x=df.Km, color= 'magenta', height=10)
         g.set(xlim=(0,200000))
-        g.set(figsize=(9, 6))
         plt.show()
         st.pyplot()
     
 elif sd == "Box Plot":
-        fig = plt.figure(figsize=(12, 6))
+        plt.figure(figsize=(12, 6))
         plt.ylim(0,60)
         sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
         plt.show()
