@@ -38,7 +38,7 @@ st.sidebar.title('Input Feature')
 
 Pt=pd.pivot_table(df,index="Make",columns=None,aggfunc={'Price':'mean'})
 Pt['F']=Pt.index
-t=sns.barplot(x=Pt.F,y='Price',data=Pt)
+t=sns.barplot(x=Pt.F,y='Price',data=Pt, height=10, aspect=2.4)
 # t.fig.set_figwidth(12)
 # t.fig.set_figheight(6)
 plt.show()
