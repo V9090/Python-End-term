@@ -52,12 +52,12 @@ sd = st.selectbox(
             "Dist Plot"   #Seconf option in menu
         ]
     )
-st.set_option('deprecation.showPyplotGlobalUse', False)
-fig = plt.figure(figsize=(12, 6))
+
 if sd == "Dist Plot":
         plt.figure(figsize=(9, 6))
         g=sns.displot(data=df,x=df.Km, color= 'red')
         g.set(xlim=(0,200000))
+        g.set(figsize=(9, 6))
         plt.show()
         st.pyplot()
     
