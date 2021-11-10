@@ -57,10 +57,12 @@ fig = plt.figure(figsize=(12, 6))
 if sd == "Dist Plot":
         plt.xlim(0,200000) 
         sns.displot(x=df.Km,data=df, hue=1,aspect=2.4)
+        plt.show()
     
 elif sd == "Box Plot":
         plt.ylim(0,60)
         sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
+        plt.show()
 
 # st.markdown('Price variation of based on location')
 # plt.show()
