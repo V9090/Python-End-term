@@ -53,6 +53,7 @@ sd = st.selectbox(
             "Dist Plot"   #Seconf option in menu
         ]
     )
+st.set_option('deprecation.showPyplotGlobalUse', False)
 fig = plt.figure(figsize=(12, 6))
 if sd == "Dist Plot":
         plt.xlim(0,200000) 
