@@ -56,7 +56,7 @@ sd = st.selectbox(
 st.set_option('deprecation.showPyplotGlobalUse', False)
 fig = plt.figure(figsize=(12, 6))
 if sd == "Dist Plot":
-        plt.xlim(0,200000) 
+        #plt.xlim(0,200000) 
         #df.plot(x=df.Km, kind='hist')
         sns.displot(data=df,x=df.Km, color= 'red')
         plt.show()
