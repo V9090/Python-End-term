@@ -54,8 +54,8 @@ sd = st.selectbox(
     )
 
 if sd == "Dist Plot":
-        plt.figure(figsize=(12, 6))
-        g=sns.displot(data=df,x=df.Km, color= 'purple', height=1)
+        #plt.figure(figsize=(12, 6))
+        g=sns.displot(data=df,x=df.Km, color= 'purple')
         g.set(xlim=(0,200000))
         plt.show()
         st.pyplot()
