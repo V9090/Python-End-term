@@ -39,8 +39,8 @@ st.sidebar.title('Input Feature')
 Pt=pd.pivot_table(df,index="Make",columns=None,aggfunc={'Price':'mean'})
 Pt['F']=Pt.index
 t=sns.boxplot(x=Pt.F,y='Price',data=Pt)
-g.fig.set_figwidth(12)
-g.fig.set_figheight(6)
+t.fig.set_figwidth(12)
+t.fig.set_figheight(6)
 plt.show()
 st.pyplot()
 
