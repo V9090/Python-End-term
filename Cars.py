@@ -56,7 +56,7 @@ sd = st.selectbox(
 fig = plt.figure(figsize=(12, 6))
 if sd == "Dist Plot":
         plt.xlim(0,200000) 
-        sns.displot(x='Km',data=df)
+        sns.distplot(x='Km',data=df)
         plt.show()
     
 elif sd == "Box Plot":
