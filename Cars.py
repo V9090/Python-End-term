@@ -57,7 +57,7 @@ fig = plt.figure(figsize=(12, 6))
 if sd == "Dist Plot":
         fig = plt.figure(figsize=(12, 6))
         g=sns.displot(data=df,x=df.Km, color= 'red')
-        g.plt.xlim(0,200000) 
+        g.set(xlim=(0,200000))
         plt.show()
         st.pyplot()
     
