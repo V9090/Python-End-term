@@ -21,7 +21,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
 
 df=pd.read_csv('data.csv')
-df.keys()
 
 # go to anaconda prompt and use --->>>> cd path to change base folder path
 # streamlit run filename.py in anaconda
@@ -57,8 +56,8 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 fig = plt.figure(figsize=(12, 6))
 if sd == "Dist Plot":
         fig = plt.figure(figsize=(12, 6))
-        sns.plt.xlim(0,200000) 
-        sns.displot(data=df,x=df.Km, color= 'red')
+        g=sns.displot(data=df,x=df.Km, color= 'red')
+        g.plt.xlim(0,200000) 
         plt.show()
         st.pyplot()
     
