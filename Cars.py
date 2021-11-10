@@ -57,7 +57,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 fig = plt.figure(figsize=(12, 6))
 if sd == "Dist Plot":
         plt.xlim(0,200000) 
-        sns.displot(data=df,x=df.Km, color= 'red')
+        sns.barplot(data=df,x=df.Km, color= 'red')
         plt.show()
     
 elif sd == "Box Plot":
