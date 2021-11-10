@@ -57,6 +57,8 @@ if sd == "Sales distribution according to distance run":
         #plt.figure(figsize=(12, 6))
         g=sns.displot(data=df,x=df.Km, color= 'purple')
         g.set(xlim=(0,200000))
+        g.fig.set_figwidth(12)
+        g.fig.set_figheight(6)
         plt.show()
         st.pyplot()
     
