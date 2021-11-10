@@ -35,7 +35,7 @@ for i in df_test.columns:
   
 st.title('Used-Car Price Calculator')
 st.sidebar.title('Input Feature')
-st.image('https://unsplash.com/photos/rF_j3F2vrNc?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink')
+st.image('cars.jpg')
 # Pt=pd.pivot_table(df,index="Make",columns=None,aggfunc={'Price':'mean'})
 # Pt['F']=Pt.index
 # t=sns.barplot(x=Pt.F,y='Price',data=Pt)
