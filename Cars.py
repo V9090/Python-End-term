@@ -50,7 +50,7 @@ sd = st.selectbox(
         [
             "Location-Wise Price ", #First option in menu
             "Distribution according to distance run",   #Seconf option in menu
-            "Distribution according to vehicle age"
+           # "Distribution according to vehicle age"
         ]
     )
 
@@ -70,13 +70,13 @@ elif sd == "Location-Wise Price ":
         plt.show()
         st.pyplot()
         
-elif sd == "Distribution according to vehicle age ":
-        plt.figure(figsize=(12, 6))
-        k=sns.displot(x="Age",y=df.Price,data=df, hue=1,aspect=2.4)
-        k.fig.set_figwidth(12)
-        k.fig.set_figheight(5)
-        plt.show()
-        st.pyplot()
+# elif sd == "Distribution according to vehicle age ":
+#         plt.figure(figsize=(12, 6))
+#         k=sns.displot(x="Age",y=df.Price,data=df, hue=1,aspect=2.4)
+#         k.fig.set_figwidth(12)
+#         k.fig.set_figheight(5)
+#         plt.show()
+#         st.pyplot()
 
 # st.markdown('Price variation of based on location')
 # plt.show()
