@@ -57,7 +57,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 fig = plt.figure(figsize=(12, 6))
 if sd == "Dist Plot":
         plt.xlim(0,200000) 
-        sns.barplot(data=df,x=df.Km, color= 'red')
+        sns.displot(data=df,x=df.Km, color= 'red')
         plt.show()
     
 elif sd == "Box Plot":
@@ -69,7 +69,7 @@ elif sd == "Box Plot":
 # plt.show()
 # fig1 = sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
 # plt.ylim(0,60) 
-st.pyplot(fig,clear_figure=True)
+st.pyplot()
 
 
 location_list=df.Location.unique().tolist()
