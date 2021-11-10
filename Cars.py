@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Nov  9 01:08:16 2021
-
 @author: HP
 """
 
@@ -49,8 +48,7 @@ sd = st.selectbox(
         "Select a Plot", #Drop Down Menu Name
         [
             "Location-Wise Price ", #First option in menu
-            "Distribution according to distance run",   #Seconf option in menu
-           # "Distribution according to vehicle age"
+            "Sales distribution according to distance run"   #Seconf option in menu
         ]
     )
 
@@ -69,14 +67,6 @@ elif sd == "Location-Wise Price ":
         sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
         plt.show()
         st.pyplot()
-        
-# elif sd == "Distribution according to vehicle age ":
-#         plt.figure(figsize=(12, 6))
-#         k=sns.displot(x="Age",y=df.Price,data=df, hue=1,aspect=2.4)
-#         k.fig.set_figwidth(12)
-#         k.fig.set_figheight(5)
-#         plt.show()
-#         st.pyplot()
 
 # st.markdown('Price variation of based on location')
 # plt.show()
@@ -123,4 +113,3 @@ else:
       
 st.header("Price of vehicle")
 st.metric(label="", value="₹ "+str(Price), delta="")
-
