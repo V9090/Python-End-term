@@ -36,6 +36,10 @@ for i in df_test.columns:
 st.title('Used-Car Price Calculator')
 st.sidebar.title('Input Feature')
 
+Pt=pd.pivot_table(df,index="Fuel",columns=None,aggfunc={'Price':'mean'})
+Pt['F']=Pt.index
+jig=sns.barplot(x=Pt.F,y='Price',data=Pt)
+st.pyplot(jig)
 
 location_list=df.Location.unique().tolist()
 location_list.remove('Pune')
