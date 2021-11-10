@@ -48,11 +48,12 @@ sd = st.selectbox(
         "Select a Plot", #Drop Down Menu Name
         [
             "Location-Wise Price ", #First option in menu
-            "Sales distribution according to distance run"   #Seconf option in menu
+            "Distribution according to distance run",   #Seconf option in menu
+            "Distribution according to vehicle age"
         ]
     )
 
-if sd == "Sales distribution according to distance run":
+if sd == "Distribution according to distance run":
         #plt.figure(figsize=(12, 6))
         g=sns.displot(data=df,x=df.Km, color= 'purple')
         g.set(xlim=(0,200000))
@@ -67,11 +68,19 @@ elif sd == "Location-Wise Price ":
         sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
         plt.show()
         st.pyplot()
+        
+elif sd == "Distribution according to vehicle age ":
+        plt.figure(figsize=(12, 6))
+        k=sns.displot(x="Age",y=df.Price,data=df, hue=1,aspect=2.4)
+        k.fig.set_figwidth(12)
+        k.fig.set_figheight(5)
+        plt.show()
+        st.pyplot()
 
-# st.markdown('Price variation of based on location')
-# plt.show()
-# fig1 = sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
-# plt.ylim(0,60) 
+st.markdown('Price variation of based on location')
+plt.show()
+fig1 = sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
+plt.ylim(0,60) 
 
 
 
