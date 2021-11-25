@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression,Lasso,Ridge
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
-
+st.set_option('deprecation.showPyplotGlobalUse', False)
 df=pd.read_csv('data.csv')
 
 # go to anaconda prompt and use --->>>> cd path to change base folder path
@@ -120,7 +120,8 @@ elif sd == "Distribution according to vehicle age":
 
 fig1 = sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
 plt.ylim(0,60) 
-st.set_option('deprecation.showPyplotGlobalUse',False)
+
+
 
 
 # location_list=df.Location.unique().tolist()
