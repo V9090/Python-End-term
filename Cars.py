@@ -120,7 +120,7 @@ elif sd == "Distribution according to vehicle age":
 
 fig1 = sns.boxplot(x=df.Location,y=df.Price,data=df,width=.6)
 plt.ylim(0,60) 
-
+st.set_option('deprecation.showPyplotGlobalUse',False)
 
 
 # location_list=df.Location.unique().tolist()
